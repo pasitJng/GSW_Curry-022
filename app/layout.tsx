@@ -25,7 +25,7 @@ export const metadata = {
   description: "อะไร",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`d-flex flex-column min-vh-100 ${prompt.className}`}>
