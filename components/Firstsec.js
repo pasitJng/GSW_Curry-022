@@ -28,7 +28,7 @@ export default function Firstsec() {
       />
       {/* Navbar */}
       <header
-        className="d-flex align-items-center border-bottom pb-1 px-4 shadow-sm"
+        className="navbar-header d-flex align-items-center border-bottom pb-1 px-4 shadow-sm"
         style={{
           borderColor: '#1d428a',
           backgroundColor: '#ffc72c',
@@ -55,34 +55,37 @@ export default function Firstsec() {
 
       {/* Content */}
       <section
-        className="d-flex flex-column flex-md-row justify-content-center align-items-center px-4  gap-5"
+        className="d-flex flex-column flex-md-row justify-content-center align-items-center px-2 px-md-4 gap-4 gap-md-5 w-100"
         style={{ minHeight: '50vh' }}
       >
         {/* Featured Player Card */}
         <div
-          className="card shadow-lg border-0 hover-card featured-card"
+          className="card shadow-lg border-0 hover-card featured-card mb-4 mb-md-0"
           style={{
-            width: '270px',
+            width: '100%',
+            maxWidth: '320px',
             borderRadius: '22px',
             background: 'linear-gradient(135deg, #ffc72c 80%, #fffbe6 100%)',
             border: '2px solid #1d428a',
             transition: 'transform 0.5s, box-shadow 0.2s',
             overflow: 'hidden',
+            minWidth: 0,
           }}
         >
           <div className="featured-img-wrapper">
             <Image
               src="/image/featured-player.jpg"
               alt="Featured Player"
-              width={270}
-              height={320}
+              width={320}
+              height={420}
               className="featured-img"
               style={{
                 borderTopLeftRadius: '22px',
                 borderTopRightRadius: '22px',
                 objectFit: 'cover',
                 width: '100%',
-                height: '420px',
+                height: 'auto',
+                aspectRatio: '3/4',
                 display: 'block',
               }}
             />
@@ -90,15 +93,16 @@ export default function Firstsec() {
         </div>
 
         {/* Highlight Video */}
-        <div className="d-flex flex-column align-items-center" style={{ flex: '1', maxWidth: '600px' }}>
+        <div className="d-flex flex-column align-items-center w-100" style={{ maxWidth: '700px' }}>
           <h5 className="mb-3 fw-bold text-center" style={{ color: '#1d428a', letterSpacing: 1 }}>Highlight</h5>
-          <div className="ratio ratio-16x9 shadow rounded-4 border border-2" style={{ borderColor: '#1d428a', width: '100%', maxWidth: '600px', background: '#fffbe6' }}>
+          <div className="ratio ratio-16x9 shadow rounded-4 border border-2 w-100"
+            style={{ borderColor: '#1d428a', background: '#fffbe6', minHeight: '200px' }}>
             <iframe
               src="https://www.youtube.com/embed/aYLIgURZJGM?si=8gXyft4vgHMZPamL"
               title="Stephen Curry Highlight"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              style={{ borderRadius: '18px' }}
+              style={{ borderRadius: '18px', width: '100%', height: '100%' }}
             ></iframe>
           </div>
         </div>
@@ -146,41 +150,64 @@ export default function Firstsec() {
           border-radius: 20px;
           box-shadow: 0 2px 16px #ffc72c55, 0 1.5px 8px #1d428a22;
           padding: 12px 36px 12px 28px;
-          font-size: 1.35rem;
+          font-size: 1.1rem;
           font-weight: bold;
           color: #1d428a;
           letter-spacing: 1px;
           position: relative;
           border: 2px solid #ffc72c;
         }
+        @media (max-width: 768px) {
+          .featured-header-glow {
+            font-size: 10px;
+            padding: 10px 18px 10px 14px;
+          }
+          .featured-header-name {
+            font-size: 10px;
+          }
+        }
+
+
         .featured-header-name {
           color: #1d428a;
-          font-size: 1.35em;
+          font-size: 1.1em;
           font-weight: 700;
           text-shadow: 0 2px 8px #fffbe6cc, 0 1px 0 #ffc72c99;
         }
         .featured-header-divider {
           color: #ffc72c;
-          font-size: 1.2em;
+          font-size: 1em;
           font-weight: 900;
-          margin: 0 14px;
+          margin: 0 10px;
           text-shadow: 0 1px 4px #1d428a33;
         }
         .featured-header-role {
           color: #fff;
           background: #1d428a;
           border-radius: 12px;
-          padding: 2px 16px;
-          font-size: 1.05em;
+          padding: 2px 10px;
+          font-size: 1em;
           font-weight: 600;
-          margin-right: 6px;
+          margin-right: 4px;
           box-shadow: 0 1px 6px #1d428a22;
         }
         .featured-header-stars {
           color: #ffc72c;
-          font-size: 1.1em;
+          font-size: 1em;
           letter-spacing: 2px;
           text-shadow: 0 1px 4px #1d428a33;
+        }
+        @media (max-width: 768px) {
+          .featured-card {
+            max-width: 50vw !important;
+            margin-top: 3rem !important;
+          }
+            .navbar-header h4{
+             font-size: 0.8rem;
+          .iframe {
+            width: 50%;
+            height: 50%;
+          }
         }
       `}</style>
     </main>
